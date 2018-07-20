@@ -1,0 +1,54 @@
+Original dataset
+In the original data set we get a high accuracy of 95% 
+step 0, training accuracy 0.14
+step 100, training accuracy 0.88
+step 200, training accuracy 0.92
+step 300, training accuracy 0.98
+step 400, training accuracy 0.98
+2018-07-19 10:57:18.843143: W tensorflow/core/framework/allocator.cc:101] Allocation of 1003520000 exceeds 10% of system memory.
+2018-07-19 10:57:20.647349: W tensorflow/core/framework/allocator.cc:101] Allocation of 250880000 exceeds 10% of system memory.
+2018-07-19 10:57:20.908913: W tensorflow/core/framework/allocator.cc:101] Allocation of 501760000 exceeds 10% of system memory.
+test accuracy 0.9468
+Time for building convnet: 
+103782
+-------------------------------------
+New Dataset with Adam
+When applying the adam optimizer is being used the optimizer drops. After changing the step and a few of the other
+parameters the dataset will stay around 83% and not move. I did not include those values due to the accuracy only
+changing by a few.
+step 0, training accuracy 0.14
+step 100, training accuracy 0.82
+step 200, training accuracy 0.78
+step 300, training accuracy 0.84
+step 400, training accuracy 0.84
+2018-07-19 11:12:45.631267: W tensorflow/core/framework/allocator.cc:101] Allocation of 1003520000 exceeds 10% of system memory.
+2018-07-19 11:12:47.671346: W tensorflow/core/framework/allocator.cc:101] Allocation of 501760000 exceeds 10% of system memory.
+test accuracy 0.8185
+Time for building convnet: 
+107513
+--------------------------
+Autograd
+The autograd optimizer was the worst one that we used and gave an accuracy of 27%
+step 0, training accuracy 0.096
+step 100, training accuracy 0.128
+step 200, training accuracy 0.188
+step 300, training accuracy 0.216
+step 400, training accuracy 0.284
+2018-07-19 12:22:34.371749: W tensorflow/core/framework/allocator.cc:101] Allocation of 501760000 exceeds 10% of system memory.
+test accuracy 0.2749
+Time for building convnet: 
+130322
+------------------------------
+Gradient Decent
+Gradient accuracy was on par with the adam optimizer at 83%
+step 0, training accuracy 0.088
+step 100, training accuracy 0.8
+step 200, training accuracy 0.84
+step 300, training accuracy 0.808
+step 400, training accuracy 0.884
+2018-07-19 12:29:19.285489: W tensorflow/core/framework/allocator.cc:101] Allocation of 501760000 exceeds 10% of system memory.
+test accuracy 0.8369
+Time for building convnet: 
+139917
+
+
